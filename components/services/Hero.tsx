@@ -88,9 +88,9 @@ function Hero() {
         )}
         {open && (
           <div className="md:hidden absolute right-5 bg-[#0D70DA]/70 rounded-xl text-white top-2/3 px-2 flex flex-col items-center gap-10">
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <Link href="/work" className="hover:text-blue-600 transition-colors">
               Work
-            </a>
+            </Link>
             <Link
               href="/services"
               className="hover:text-blue-600 transition-colors  flex items-center gap-1"

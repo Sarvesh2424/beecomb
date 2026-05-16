@@ -4,16 +4,16 @@ import Image from "next/image";
 
 const AppRow = () => {
   const row1Images = [
-    { src: "/APP5.svg", alt: "app 1" },
-    { src: "/APP6.svg", alt: "app 2" },
-    { src: "/APP7.svg", alt: "app 3" },
-    { src: "/APP8.svg", alt: "app 4" },
-  ];
-  const row2Images = [
     { src: "/APP1.svg", alt: "app 1" },
     { src: "/APP2.svg", alt: "app 2" },
     { src: "/APP3.svg", alt: "app 3" },
     { src: "/APP4.svg", alt: "app 4" },
+  ];
+  const row2Images = [
+    { src: "/APP8.svg", alt: "app 1" },
+    { src: "/APP6.svg", alt: "app 2" },
+    { src: "/APP7.svg", alt: "app 3" },
+    { src: "/APP5.svg", alt: "app 4" },
   ];
 
   return (

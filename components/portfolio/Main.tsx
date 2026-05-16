@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   Search,
   ChevronDown,
@@ -35,6 +35,19 @@ export default function PortfolioSection({
     "All",
     ...new Set(portfolio.flatMap((p) => p.tags)),
   ]);
+  const [search, setSearch] = useState("");
+
+  const filteredProjects = useMemo(() => {
+    return portfolio.filter((project) => {
+      const matchesTab =
+        activeTab === "All" || project.tags.includes(activeTab);
+      const matchesSearch = project.title
+        .toLowerCase()
+        .includes(search.toLowerCase());
+
+      return matchesTab && matchesSearch;
+    });
+  }, [portfolio, activeTab, search]);
 
   return (
     <section
@@ -101,9 +114,9 @@ export default function PortfolioSection({
           )}
           {open && (
             <div className="md:hidden absolute right-5 bg-[#0D70DA]/70 rounded-xl text-white top-2/3 px-2 flex flex-col items-center gap-10">
-              <a href="#" className="hover:text-blue-600 transition-colors">
+              <Link href="/work" className="hover:text-blue-600 transition-colors">
                 Work
-              </a>
+              </Link>
               <Link
                 href="/services"
                 className="hover:text-blue-600 transition-colors  flex items-center gap-1"
@@ -123,6 +136,8 @@ export default function PortfolioSection({
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 placeholder='Search "Latest Projects"'
                 className="w-full pl-12  pr-4 py-4 bg-white rounded-full border border-[#D9D9D9] placeholder:text-[#757575] focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-[#757575]"
               />
@@ -149,43 +164,55 @@ export default function PortfolioSection({
             ))}
           </div>
         </div>
-
+        <div className="w-full h-px bg-linear-to-r from-transparent via-[#757575] to-transparent mb-8"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
-          {projects.map((project, idx) => {
+          {filteredProjects.map((project, idx) => {
             console.log(project);
             return (
-            <div key={idx} className="group cursor-pointer">
-              <div className="relative aspect-square w-full rounded-[2.5rem] overflow-hidden mb-8 bg-gray-100">
-                <Image src={project.image} alt="image" width={100} height={200} className="w-full h-full object-cover"/>
-              </div>
+              <div key={idx} className="group cursor-pointer">
+                <div className="relative aspect-square w-full rounded-[2.5rem] overflow-hidden mb-8 bg-gray-100">
+                  <Image
+                    src={project.image}
+                    alt="image"
+                    width={100}
+                    height={200}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <div className="space-y-4">
-                  <div className="flex gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-4 py-1 rounded-full border border-black text-sm text-black"
-                      >
-                        {tag.trim()}
-                      </span>
-                    ))}
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="space-y-4">
+                    <div className="flex gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-4 py-1 rounded-full border border-black text-sm text-black"
+                        >
+                          {tag.trim()}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className="text-3xl mt-8 font-semibold tracking-tight">
+                      {project.title}
+                    </h3>
                   </div>
-                  <h3 className="text-3xl mt-8 font-semibold tracking-tight">
-                    {project.title}
-                  </h3>
+                  <div className="p-3 rounded-full border border-black flex items-center justify-center">
+                    <ArrowRight className="w-10 h-10" />
+                  </div>
                 </div>
-                <div className="p-3 rounded-full border border-black flex items-center justify-center">
-                  <ArrowRight className="w-10 h-10" />
-                </div>
-              </div>
 
-              <p className="text-[#757575] text-sm leading-relaxed max-w-xl">
-                {project.description}
-              </p>
-            </div>
-          );})}
+                <p className="text-[#757575] text-sm leading-relaxed max-w-xl">
+                  {project.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
+        {filteredProjects.length === 0 && (
+          <div className="text-5xl text-center font-semibold">
+            No data found!
+          </div>
+        )}
       </div>
     </section>
   );

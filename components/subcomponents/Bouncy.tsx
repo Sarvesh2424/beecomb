@@ -55,11 +55,11 @@ const BouncyFooter = () => {
       */}
       <div
         ref={visualRef}
-        className="absolute inset-0 w-full h-full will-change-transform overflow-visible"
+        className="absolute inset-0  w-full h-full will-change-transform overflow-visible"
       >
         {/* The Arch/Background */}
-        <div className="mx-auto w-full h-full relative bg-white rounded-t-[50%_100%] shadow-[0_-100px_200px_-100px_#0099FF40] border-t border-x border-emerald-50/20">
-          <div className="absolute top-0 z-0 left-1/2 -translate-x-1/2">
+        <div className="mx-auto w-full h-full relative bg-transparent rounded-t-[50%_100%] shadow-[0_-100px_200px_-100px_#0099FF40] border-t border-x border-emerald-50/20">
+          <div className="absolute top-0 left-1/2 -z-20 -translate-x-1/2">
             <div className="p-4 w-screen flex justify-center rounded-full mt-12  ">
               <Image
                 src="/MAP.svg"
