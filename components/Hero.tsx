@@ -1,10 +1,13 @@
-import { ChevronDown, ArrowRight } from "lucide-react";
+'use client'
+
+import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
 import { Inter, Montserrat_Alternates } from "next/font/google";
 import Image from "next/image";
 // import AppRow from "./subcomponents/AppRow";
 import AppRow1 from "./subcomponents/AppRow1";
 import InfiniteEmojiMarquee from "./subcomponents/AppRow1";
 import Link from "next/link";
+import { useState } from "react";
 
 const mont = Montserrat_Alternates({
   weight: "600",
@@ -13,25 +16,28 @@ const mont = Montserrat_Alternates({
 const inter = Inter({});
 
 const Hero = () => {
+  const [open, setIsOpen] = useState(false);
   return (
     <div
       className={`bg-[url('/BG.svg')] bg-cover bg-no-repeat ${inter.className}`}
     >
       <nav className="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
-          <Image
-            src="/Logo.svg"
-            width={52}
-            height={44}
-            className="w-auto h-auto"
-            alt="logo"
-          />
+          <Link href={"/"}>
+            {" "}
+            <Image
+              src="/Logo.svg"
+              width={52}
+              height={44}
+              className="w-auto h-auto"
+              alt="logo"
+            />
+          </Link>
         </div>
-
         <div className="hidden md:flex items-center gap-10 text-[#0E1435]">
-          <a href="#" className="hover:text-blue-600 transition-colors">
+          <Link href="/work" className="hover:text-blue-600 transition-colors">
             Work
-          </a>
+          </Link>
           <Link
             href="/services"
             className="hover:text-blue-600 transition-colors text-[#0E1435] flex items-center gap-1"
@@ -49,6 +55,46 @@ const Hero = () => {
         <button className="bg-[#0D70DA] text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-all">
           Get a Proposal <ArrowRight size={18} />
         </button>
+        {open ? (
+          <button
+            className="md:hidden text-black"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen((p) => !p);
+            }}
+          >
+            <X />
+          </button>
+        ) : (
+          <button
+            className="md:hidden text-black"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen((p) => !p);
+            }}
+          >
+            <Menu />
+          </button>
+        )}
+        {open && (
+          <div className="md:hidden absolute right-5 bg-[#0D70DA]/70 rounded-xl text-white top-2/3 px-2 flex flex-col items-center gap-10">
+            <Link href="/work" className="hover:text-blue-600 transition-colors">
+              Work
+            </Link>
+            <Link
+              href="/services"
+              className="hover:text-blue-600 transition-colors  flex items-center gap-1"
+            >
+              Services <ChevronDown size={16} className="mt-0.5" />
+            </Link>
+            <a
+              href="#"
+              className="hover:text-blue-600  transition-colors"
+            >
+              Contact
+            </a>
+          </div>
+        )}
       </nav>
 
       <section className="relative z-10 pt-20 pb-16 px-4 text-center max-w-7xl mx-auto">

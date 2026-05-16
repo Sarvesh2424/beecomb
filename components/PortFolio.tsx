@@ -75,7 +75,7 @@ const TechnologySection = () => {
 
       {/* Grid Container */}
       <div className="relative z-10 flex flex-col items-center max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-7 grid-cols-2 items-center justify-center gap-6 md:gap-8 justify-items-center">
+        <div className="grid lg:grid-cols-7 md:grid-cols-4 grid-cols-2 items-center justify-center gap-6 md:gap-8 justify-items-center">
           {technologies.slice(0, 7).map((tech, idx) => (
             <div
               key={idx}
@@ -102,7 +102,7 @@ const TechnologySection = () => {
             </div>
           ))}
         </div>
-        <div className="grid md:grid-cols-5 w-max grid-cols-2 mt-8 items-center justify-center gap-6 md:gap-8 justify-items-center">
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 w-max grid-cols-2 mt-8 items-center justify-center gap-6 md:gap-8 justify-items-center">
           {technologies.slice(7, 13).map((tech, idx) => (
             <div
               key={idx}
@@ -131,7 +131,7 @@ const TechnologySection = () => {
         </div>
       </div>
       <div className="relative mt-8 z-10 flex flex-col items-center max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-7 grid-cols-2 items-center justify-center gap-6 md:gap-8 justify-items-center">
+        <div className="grid md:grid-cols-4 lg:grid-cols-7 grid-cols-2 items-center justify-center gap-6 md:gap-8 justify-items-center">
           {technologies.slice(0, 7).map((tech, idx) => (
             <div
               key={idx}
@@ -158,7 +158,7 @@ const TechnologySection = () => {
             </div>
           ))}
         </div>
-        <div className="grid md:grid-cols-5 grid-cols-2 mt-8 items-center justify-center gap-6 md:gap-8 w-max ">
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 mt-8 items-center justify-center gap-6 md:gap-8 w-max ">
           {technologies.slice(7, 13).map((tech, idx) => (
             <div
               key={idx}

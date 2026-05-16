@@ -14,7 +14,6 @@ export default function VisionCTA() {
     <section
       className={`relative w-full bg-[#0B0B0B] py-24 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5 ${inter.className}`}
     >
-      {/* Background Atmosphere - High-end radial glows */}
       <div className="absolute top-0 left-0 w-150 h-150 bg-radial from-[#0099FF] to-[#D2EDFF] blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-75 h-75 bg-radial from-[#0099FF] to-[#D2EDFF] blur-[100px] rounded-full translate-x-1/4 translate-y-1/4" />
 

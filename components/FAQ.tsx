@@ -43,7 +43,6 @@ export default function FAQSection() {
   return (
     <section className="bg-[#0B0B0B] border border-[#373636]/50 border-r-0 border-l-0 border-b-0 text-white py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16">
-        {/* Left Side: Content */}
         <div className="space-y-8">
           <span
             className={`text-[#00B1FF] ${geo.className} tracking-widest text-sm uppercase  `}
@@ -68,7 +67,6 @@ export default function FAQSection() {
           </button>
         </div>
 
-        {/* Right Side: Accordion */}
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;

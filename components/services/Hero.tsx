@@ -33,14 +33,38 @@ function Hero() {
       <div className="absolute bottom-0 right-0 w-175 h-175 bg-radial from-[#FF00D052] to-[#D2EDFF] blur-[120px] rounded-full 10 overflow-x-hidden translate-x-1/3 translate-y-1/3" />
       <nav className="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
-          <Image
-            src="/Logo.svg"
-            width={52}
-            height={44}
-            className="w-auto h-auto"
-            alt="logo"
-          />
+          <Link href={"/"}>
+            {" "}
+            <Image
+              src="/Logo.svg"
+              width={52}
+              height={44}
+              className="w-auto h-auto"
+              alt="logo"
+            />
+          </Link>
         </div>
+        <div className="hidden md:flex items-center gap-10 text-[#0E1435]">
+          <Link href="/work" className="hover:text-blue-600 transition-colors">
+            Work
+          </Link>
+          <Link
+            href="/services"
+            className="hover:text-blue-600 transition-colors text-[#0E1435] flex items-center gap-1"
+          >
+            Services <ChevronDown size={16} className="mt-0.5" />
+          </Link>
+          <a
+            href="#"
+            className="hover:text-blue-600 text-[#0E1435] transition-colors"
+          >
+            Contact
+          </a>
+        </div>
+
+        <button className="bg-[#0D70DA] text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-all">
+          Get a Proposal <ArrowRight size={18} />
+        </button>
         {open ? (
           <button
             className="md:hidden text-black"
@@ -62,44 +86,25 @@ function Hero() {
             <Menu />
           </button>
         )}
-        <div className="hidden md:flex items-center gap-10 text-[#0E1435]">
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Work
-          </a>
-          <Link
-            href="/services"
-            className="hover:text-blue-600 transition-colors text-[#0E1435] flex items-center gap-1"
-          >
-            Services <ChevronDown size={16} className="mt-0.5" />
-          </Link>
-          <a
-            href="#"
-            className="hover:text-blue-600 text-[#0E1435] transition-colors"
-          >
-            Contact
-          </a>
-        </div>
-
-        <button className="bg-[#0D70DA] text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-all">
-          Get a Proposal <ArrowRight size={18} />
-        </button>
-        <div className="md:hidden flex items-center gap-10 text-[#0E1435]">
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Work
-          </a>
-          <Link
-            href="/services"
-            className="hover:text-blue-600 transition-colors text-[#0E1435] flex items-center gap-1"
-          >
-            Services <ChevronDown size={16} className="mt-0.5" />
-          </Link>
-          <a
-            href="#"
-            className="hover:text-blue-600 text-[#0E1435] transition-colors"
-          >
-            Contact
-          </a>
-        </div>
+        {open && (
+          <div className="md:hidden absolute right-5 bg-[#0D70DA]/70 rounded-xl text-white top-2/3 px-2 flex flex-col items-center gap-10">
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Work
+            </a>
+            <Link
+              href="/services"
+              className="hover:text-blue-600 transition-colors  flex items-center gap-1"
+            >
+              Services <ChevronDown size={16} className="mt-0.5" />
+            </Link>
+            <a
+              href="#"
+              className="hover:text-blue-600  transition-colors"
+            >
+              Contact
+            </a>
+          </div>
+        )}
       </nav>
       <h1
         className={`md:w-1/3 flex relative items-center h-full ml-16 mt-24 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}

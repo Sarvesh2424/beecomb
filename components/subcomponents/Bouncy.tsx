@@ -59,13 +59,13 @@ const BouncyFooter = () => {
       >
         {/* The Arch/Background */}
         <div className="mx-auto w-full h-full relative bg-white rounded-t-[50%_100%] shadow-[0_-100px_200px_-100px_#0099FF40] border-t border-x border-emerald-50/20">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2">
+          <div className="absolute top-0 z-0 left-1/2 -translate-x-1/2">
             <div className="p-4 w-screen flex justify-center rounded-full mt-12  ">
               <Image
                 src="/MAP.svg"
                 width={1400}
                 height={800}
-                className="lg:max-w-[70%]  h-auto"
+                className="lg:max-w-[70%] md:max-w-[70%]  h-auto"
                 alt="circlelogo"
                 priority
               />

@@ -12,7 +12,7 @@ const poppins2 = Poppins({
 
 function ClientSay() {
   return (
-    <div className="bg-[#070707] flex flex-col items-center gap-8 py-12">
+    <div className="bg-[#070707] flex flex-col px-2 md:px-0 items-center gap-8 py-12">
       <h1 className={`${monst.className} font-semibold text-5xl text-white`}>
         What Our{" "}
         <span className="text-[#00B1FF] font-normal italic">Clients Say</span>

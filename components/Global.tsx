@@ -44,7 +44,7 @@ const monts = Montserrat({});
 
 const GlobalPartner = () => {
   return (
-    <section className="bg-white py-24 px-6 relative overflow-hidden flex gap-104 flex-col items-center">
+    <section className="bg-white py-24 px-6 relative overflow-hidden flex md:gap-104 flex-col items-center">
       <BouncyFooter/>
 
       {/* Typography */}
