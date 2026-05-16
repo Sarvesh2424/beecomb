@@ -18,7 +18,7 @@ export async function getUploadUrl(fileName: string, fileType: string) {
     throw new Error("AWS_BUCKET_NAME is missing from your server environment variables.");
   }
 
-  const key = `uploads/${Date.now()}-${fileName}`;
+  const key = `uploads/beecomb/${Date.now()}-${fileName}`;
   
   const command = new PutObjectCommand({
     Bucket: bucketName,
