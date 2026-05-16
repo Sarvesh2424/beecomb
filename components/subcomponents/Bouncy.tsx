@@ -47,7 +47,7 @@ const BouncyFooter = () => {
   return (
     <footer
       ref={containerRef}
-      className="relative w-full h-125 mt-[20vh] bg-transparent overflow-visible"
+      className="relative w-full h-100 md:h-125 mt-[20vh] bg-transparent overflow-visible"
     >
       {/* The "Bouncy Wrapper" 
         By putting the Map and the Arch inside this div, 
@@ -58,7 +58,7 @@ const BouncyFooter = () => {
         className="absolute inset-0  w-full h-full will-change-transform overflow-visible"
       >
         {/* The Arch/Background */}
-        <div className="mx-auto w-full h-full relative bg-transparent rounded-t-[50%_100%] shadow-[0_-100px_200px_-100px_#0099FF40] border-t border-x border-emerald-50/20">
+        <div className="mx-auto w-full h-full relative bg-transparent md:rounded-t-[50%_100%] rounded-t-[50%_20%]  shadow-[0_-100px_200px_-100px_#0099FF40] border-t border-x border-emerald-50/20">
           <div className="absolute top-0 left-1/2 -z-20 -translate-x-1/2">
             <div className="p-4 w-screen flex justify-center rounded-full mt-12  ">
               <Image
