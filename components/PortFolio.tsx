@@ -1,6 +1,7 @@
 "use client";
 
 import { Inter, Montserrat } from "next/font/google";
+import { ParallaxScrollDemo } from "./subcomponents/ParallaxScroll";
 
 const monts = Montserrat({});
 const inter = Inter({});
@@ -72,9 +73,9 @@ const TechnologySection = () => {
           Empowering Our Products with Modern, Scalable & Robust Technologies
         </p>
       </div>
-
+      <ParallaxScrollDemo />
       {/* Grid Container */}
-      <div className="relative z-10 flex flex-col items-center max-w-7xl mx-auto">
+      {/* <div className="relative z-10 flex flex-col items-center max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-7 md:grid-cols-4 grid-cols-2 items-center justify-center gap-6 md:gap-8 justify-items-center">
           {technologies.slice(0, 7).map((tech, idx) => (
             <div
@@ -129,8 +130,8 @@ const TechnologySection = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="relative mt-8 z-10 flex flex-col items-center max-w-7xl mx-auto">
+      </div> */}
+      {/* <div className="relative mt-8 z-10 flex flex-col items-center max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 lg:grid-cols-7 grid-cols-2 items-center justify-center gap-6 md:gap-8 justify-items-center">
           {technologies.slice(0, 7).map((tech, idx) => (
             <div
@@ -185,7 +186,7 @@ const TechnologySection = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

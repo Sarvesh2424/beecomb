@@ -103,9 +103,9 @@ export default function ServicesList() {
 
             {/* The Text Title */}
             <h3
-              className={`text-4xl w-2/3 md:text-9xl mt-8 font-medium transition-all duration-500 ease-out z-10 ${
+              className={`text-4xl w-2/3 md:text-8xl mt-8 font-medium transition-all duration-500 ease-out z-10 ${
                 activeIndex === index
-                  ? "text-[#0099FF] text-start -translate-y-24 md:translate-y-0  md:translate-x-16"
+                  ? "text-[#0099FF] text-start -translate-y-24 md:translate-y-0  md:translate-x-58"
                   : "text-white"
               }`}
             >

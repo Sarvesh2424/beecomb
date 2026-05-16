@@ -54,7 +54,7 @@ const Footer = () => {
         {/* Massive Wordmark */}
         <div className="w-full mb-16 overflow-hidden">
           <h1
-            className={`lg:text-[240px] text-7xl font-semibold leading-none text-white select-none ${mont.className}`}
+            className={`lg:text-[240px] text-6xl font-semibold leading-none text-white select-none ${mont.className}`}
           >
             BeeComb
           </h1>

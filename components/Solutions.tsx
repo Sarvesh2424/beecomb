@@ -48,12 +48,12 @@ const Solutions = () => {
           Solutions We <span className="text-[#00B1FF]">Provide</span>
         </h2>
 
-        <div className="grid grid-cols-1 w-full md:grid-cols-2 lg:grid-cols-4 p-4 md:p-0 gap-8">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-4 lg:grid-cols-4 p-4 md:p-0 gap-8">
           {cards.map((card, index) => (
             <div
               key={index}
               className={`bg-[#222222]
-                rounded-4xl overflow-hidden relative p-10 h-125  flex flex-col justify-end`}
+                rounded-4xl shrink-0 w-[85vw] md:w-auto overflow-hidden relative p-10 h-125  flex flex-col justify-end`}
             >
               {/* Mockup Placeholder Div - This simulates where your images would go */}
               <div className="absolute inset-0 z-0 flex items-center justify-center p-4">
