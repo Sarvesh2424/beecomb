@@ -128,7 +128,10 @@ export default function page() {
             Post <span className="text-[#00AEEF]">New Project</span>
           </h1>
           <button
-            onClick={() => setIsLoggedIn(false)}
+            onClick={() => {setIsLoggedIn(false)
+              localStorage.removeItem("login")
+            }
+            }
             className="text-red-500 hover:text-white text-sm "
           >
             Logout
