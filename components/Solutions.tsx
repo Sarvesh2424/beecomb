@@ -1,10 +1,15 @@
+"use client";
+
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
+import { useRef, useState } from "react";
 
 const mont = Montserrat({});
 
 const Solutions = () => {
+  const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const cards = [
     {
       title: "UI/UX Design",
@@ -33,22 +38,50 @@ const Solutions = () => {
     },
   ];
 
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+
+    const { scrollLeft, clientWidth } = scrollRef.current;
+    // Debounce or calculate based on the width of a single mobile card (85vw + gap)
+    const index = Math.round(scrollLeft / (clientWidth * 0.85));
+
+    // Ensure index stays within bounds
+    if (index >= 0 && index < cards.length) {
+      setActiveIndex(index);
+    }
+  };
+
+  // Optional: Allows users to click a dot to snap to that card
+  const scrollToCard = (index:number) => {
+    if (!scrollRef.current) return;
+    const { clientWidth } = scrollRef.current;
+    scrollRef.current.scrollTo({
+      left: index * (clientWidth * 0.85),
+      behavior: "smooth",
+    });
+    setActiveIndex(index);
+  };
   return (
     <section
       className={`${mont.className} bg-linear-to-t from-100% to-0% from-[#070707] to-[#07070700] relative text-white py-28 font-sans`}
     >
-        <div 
-    className="absolute -top-20 left-0 right-0 h-20 pointer-events-none z-10"
-    style={{
-      background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(10, 10, 10, 1) 100%)'
-    }}
-  />
+      <div
+        className=" hidden md:block absolute -top-20 left-0 right-0 h-20 pointer-events-none z-10"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(10, 10, 10, 1) 100%)",
+        }}
+      />
       <div className="max-w-7xl mx-auto ">
-        <h2 className="text-center text-5xl md:text-6xl font-semibold mb-20 leading-tight">
+        <h2 className="text-center text-3xl md:text-6xl font-semibold mb-20 leading-tight">
           Solutions We <span className="text-[#00B1FF]">Provide</span>
         </h2>
 
-        <div className="flex overflow-x-auto md:grid md:grid-cols-4 lg:grid-cols-4 p-4 md:p-0 gap-8">
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex snap-x snap-mandatory overflow-x-auto md:grid md:grid-cols-4 lg:grid-cols-4 p-4 md:p-0 gap-8 scrollbar-none"
+        >
           {cards.map((card, index) => (
             <div
               key={index}
@@ -97,6 +130,20 @@ const Solutions = () => {
               </div>
               <div className="absolute inset-0 h-125 bg-linear-to-b from-transparent to-black"></div>
             </div>
+          ))}
+        </div>
+        <div className="flex justify-center items-center gap-8 mt-4 md:hidden">
+          {cards.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollToCard(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index
+                  ? "w-2 bg-[#0099FF]" // Active dot expands slightly
+                  : "w-2 bg-gray-600"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
       </div>

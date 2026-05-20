@@ -59,21 +59,48 @@ const technologies = [
 
 const TechnologySection = () => {
   return (
-    <section className="relative bg-[url('/PortBG.png')] py-24 px-6 overflow-hidden min-h-screen flex flex-col items-center">
+    <section className="relative md:bg-[url('/PortBG.png')] py-24 px-6 overflow-hidden min-h-screen flex flex-col items-center">
       {/* Header */}
       <div className="relative z-10 text-center mb-20">
         <h2
-          className={`${monts.className} text-4xl md:text-5xl font-semibold text-[#1a1a2e] tracking-tight mb-4`}
+          className={`${monts.className} text-3xl md:text-5xl font-semibold text-[#1a1a2e] tracking-tight mb-4`}
         >
           TECHNOLOGIES <span className="text-[#00B1FF]">WE USE</span>
         </h2>
         <p
-          className={`text-[#757575] ${inter.className} text-sm md:text-base font-medium max-w-2xl mx-auto`}
+          className={`text-[#757575] ${inter.className}  md:text-base font-medium max-w-2xl mx-auto`}
         >
           Empowering Our Products with Modern, Scalable & Robust Technologies
         </p>
       </div>
       <ParallaxScrollDemo />
+      <div className="md:hidden grid grid-cols-3 gap-4 items-center justify-center">
+         {technologies.map((tech, idx) => (
+            <div
+              key={idx}
+              className={`
+                flex flex-col items-center justify-center gap-2
+                w-30 h-30 md:w-36 md:h-36 
+                bg-white rounded-2xl shadow-[0_7px_4px_0px_#0000001F]
+                border border-[#D4D4D4]
+                transition-all duration-500  
+                ${inter.className} 
+                group cursor-default
+              `}
+            >
+              <div
+                className={`relative w-12 h-12 md:w-14 md:h-14 mb-3 transition-transform duration-500 `}
+              >
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="w-full h-full object-contain "
+                />
+              </div>
+              <span className="font-medium text-black ">{tech.name}</span>
+            </div>
+          ))}
+      </div>
       {/* Grid Container */}
       {/* <div className="relative z-10 flex flex-col items-center max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-7 md:grid-cols-4 grid-cols-2 items-center justify-center gap-6 md:gap-8 justify-items-center">

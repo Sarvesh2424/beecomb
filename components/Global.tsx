@@ -47,9 +47,32 @@ const GlobalPartner = () => {
     <section className="bg-white py-24 px-6 relative overflow-hidden flex md:gap-104 flex-col items-center">
       <BouncyFooter/>
 
+      <div className="md:hidden grid grid-cols-2 gap-2">
+        <div className="bg-[#C2E7FF33] p-3 rounded-4xl">
+          <p className="text-[#1E2A2EE5] font-['Arial']">Tech Hub</p>
+          <h1 className="font-clash text-[#1E2A2E] font-bold text-xl">Bangalore, India</h1>
+          <p className="text-[#1E2A2EBF] font-['Arial'] text-sm">Development Powerhouse</p>
+        </div>
+        <div className="bg-[#C2E7FF33] p-3 rounded-4xl">
+          <p className="text-[#1E2A2EE5] font-['Arial']">Headquaters</p>
+          <h1 className="font-clash text-[#1E2A2E] font-bold text-xl"> Luton, UK</h1>
+          <p className="text-[#1E2A2EBF] font-['Arial'] text-sm">Strategic innovation center</p>
+        </div>
+        <div className="bg-[#C2E7FF33] p-3 rounded-4xl">
+          <p className="text-[#1E2A2EE5] font-['Arial']">Regional Office</p>
+          <h1 className="font-clash text-[#1E2A2E] font-bold text-xl">Sharjah, UAE</h1>
+          <p className="text-[#1E2A2EBF] font-['Arial'] text-sm">Middle East Operations</p>
+        </div>
+        <div className="bg-[#C2E7FF33] p-3 rounded-4xl">
+          <p className="text-[#1E2A2EE5] font-['Arial']">Regional Office</p>
+          <h1 className="font-clash text-[#1E2A2E] font-bold text-xl">New Brunswick, Canada</h1>
+          <p className="text-[#1E2A2EBF] font-['Arial'] text-sm">Western Operations</p>
+        </div>
+      </div>
+
       {/* Typography */}
-      <div className="text-center max-w-7xl relative z-10">
-        <h2 className={`"text-4xl md:text-6xl font-semibold text-gray-900 leading-tight tracking-tight ${monts.className}`}>
+      <div className="text-center  mt-12  md:mt-0 md:max-w-7xl w-full relative z-10">
+        <h2 className={`text-2xl w-full  md:text-6xl font-semibold text-gray-900 md:leading-tight md:tracking-tight ${monts.className}`}>
           Your <span className="text-[#00B1FF]">Global Partner</span> for <br />
           Scalable Digital Solutions
         </h2>

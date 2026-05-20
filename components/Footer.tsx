@@ -64,13 +64,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-6 mb-20">
           {/* Brand Column */}
           <div className="space-y-8">
-            <p className="text-[#D5D5D5] text-lg leading-relaxed max-w-3/4">
+            <p className="text-[#D5D5D5] text-lg leading-relaxed md:max-w-3/4">
               We transform ideas into user-centered digital experiences for
               businesses worldwide, from Fortune 500s to startups, using Figma,
               Webflow, and no-code solutions.
             </p>
             {/* Social Icons */}
-            <div className="flex gap-4">
+            <div className="md:flex hidden  gap-4">
               {["/Globe.svg", "/LI.svg", "/INS.svg", "/FB.svg", "/X.svg"].map(
                 (Icon, idx) => (
                   <div key={idx} className="rounded-full bg-[#242323] p-3">
@@ -89,7 +89,7 @@ const Footer = () => {
 
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title} className="space-y-6">
+            <div key={title} className="space-y-6 hidden md:block">
               <h4 className="text-lg font-bold">{title}</h4>
               <ul className="space-y-3">
                 {links.map((link) => (
@@ -107,12 +107,74 @@ const Footer = () => {
           ))}
         </div>
 
+        <div className="flex justify-between">
+          <div className="space-y-6 md:hidden">
+            <h4 className="text-lg font-bold">Company</h4>
+            <ul className="space-y-3">
+              {footerLinks["Company"].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-[#8F8F8F] hover:text-white transition-colors duration-200 text-sm md:text-base"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="space-y-6 md:hidden">
+            <h4 className="text-lg font-bold">Services</h4>
+            <ul className="space-y-3">
+              {footerLinks["Services"].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-[#8F8F8F] hover:text-white transition-colors duration-200 text-sm md:text-base"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="md:hidden mb-6">
+          <h4 className="text-lg font-bold mb-6">Industries</h4>
+          <ul className="grid grid-cols-2 gap-x-20 justify-between space-y-3">
+            {footerLinks["Industries"].map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className="text-[#8F8F8F] hover:text-white transition-colors duration-200 text-sm md:text-base"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Copyright */}
         <div className="text-center">
           <p className="text-[#FFFFFFB2] text-xs">
-            © ZeeFrames (Private) Limited. All Rights
-            Reserved.
+            © ZeeFrames (Private) Limited. All Rights Reserved.
           </p>
+        </div>
+        <div className="flex md:hidden mt-4 justify-center  gap-4">
+          {["/Globe.svg", "/LI.svg", "/INS.svg", "/FB.svg", "/X.svg"].map(
+            (Icon, idx) => (
+              <div key={idx} className="rounded-full bg-[#242323] p-3">
+                <Image
+                  src={Icon}
+                  alt="icon"
+                  width={18}
+                  height={18}
+                  className="w-5  h-5"
+                />
+              </div>
+            ),
+          )}
         </div>
       </div>
     </footer>

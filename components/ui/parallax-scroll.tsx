@@ -67,12 +67,12 @@ export const ParallaxScroll = ({
   return (
     <div
       className={cn(
-        "h-[40rem] items-start overflow-y-auto w-full scrollbar-none ",
+        "md:h-[40rem] items-start overflow-y-auto w-full scrollbar-none ",
         className,
       )}
       ref={scrollContainerRef} // ONLY assign ref here!
     >
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 items-start max-w-7xl mx-auto gap-6 py-20 px-4">
+      <div className="md:grid hidden grid-cols-2 md:grid-cols-4 lg:grid-cols-7 items-start max-w-7xl mx-auto gap-6 py-20 px-4">
         {columns.map((columnImages, colIdx) => (
           <div key={`col-${colIdx}`} className="grid gap-6">
             {columnImages.map((el, imgIdx) => {

@@ -12,8 +12,8 @@ const poppins2 = Poppins({
 
 function ClientSay() {
   return (
-    <div className="bg-[#070707] flex flex-col px-2 md:px-0 items-center gap-8 py-12">
-      <h1 className={`${monst.className} font-semibold text-5xl text-white`}>
+    <div className="bg-[#070707] flex flex-col px-2 md:px-0 items-center gap-8 py-12 border-1 border-white">
+      <h1 className={`${monst.className} font-semibold text-4xl md:text-5xl text-center text-white`}>
         What Our{" "}
         <span className="text-[#00B1FF] font-normal italic">Clients Say</span>
       </h1>
@@ -23,13 +23,13 @@ function ClientSay() {
         View All Testimonials
       </button>
       <div className="flex md:gap-20 mt-12">
-        <div className="flex flex-col items-center">
-            <h1 className={`${monst.className} text-9xl text-white`}>5.0</h1>
-            <p className={`italic ${poppins2.className} text-[#C1C1C1]` }>Google, Facebook, Carousell</p>
+        <div className="flex flex-col items-center w-1/2">
+            <h1 className={`${monst.className} text-8xl md:text-9xl text-white`}>5.0</h1>
+            <p className={`italic ${poppins2.className} text-[#C1C1C1] text-center mt-2 md:mt-0 ` }>Google, Facebook, Carousell</p>
         </div>
-        <div className="flex flex-col items-center">
-            <h1 className={`${monst.className} text-9xl text-white`}>4.9</h1>
-            <p className={`italic ${poppins2.className} text-[#C1C1C1]` }>Clutch</p>
+        <div className="flex flex-col items-center w-1/2">
+            <h1 className={`${monst.className} text-8xl md:text-9xl text-white`}>4.9</h1>
+            <p className={`italic ${poppins2.className} text-[#C1C1C1] mt-2 md:mt-0 ` }>Clutch</p>
         </div>
       </div>
     </div>

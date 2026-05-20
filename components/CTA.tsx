@@ -12,18 +12,18 @@ const inter = Inter({});
 export default function VisionCTA() {
   return (
     <section
-      className={`relative w-full bg-[#0B0B0B] py-24 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5 ${inter.className}`}
+      className={`relative w-full bg-[#0B0B0B] md:py-24 py-12 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5 ${inter.className}`}
     >
       <div className="absolute top-0 left-0 w-150 h-150 bg-radial from-[#0099FF] to-[#D2EDFF] blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-75 h-75 bg-radial from-[#0099FF] to-[#D2EDFF] blur-[100px] rounded-full translate-x-1/4 translate-y-1/4" />
+      <div className="absolute hidden md:block bottom-0 right-0 w-75 h-75 bg-radial from-[#0099FF] to-[#D2EDFF] blur-[100px] rounded-full translate-x-1/4 translate-y-1/4" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center relative z-10">
         {/* Left Side: Content */}
         <div className="space-y-8">
           <h2
-            className={`${geo.className} text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight`}
+            className={`${geo.className} text-2xl w-full md:text-7xl font-bold text-white leading-[1.1] tracking-tight`}
           >
-            Ready to turn your <br />
+            Ready to turn your <br className="md:block hidden"/>
             <span className="text-white/90 ">vision into </span>
             <span className="text-white">Reality</span>
           </h2>

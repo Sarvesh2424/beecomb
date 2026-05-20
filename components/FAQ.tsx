@@ -49,8 +49,8 @@ export default function FAQSection() {
           >
             FAQS
           </span>
-          <h2 className={`${mont.className} text-5xl mt-8 md:text-5xl font-semibold leading-tight`}>
-            Questions? <br />
+          <h2 className={`${mont.className} text-2xl mt-8 md:text-5xl font-semibold leading-tight`}>
+            Questions? <br className="md:block hidden" />
             We’ve <br />
             <span className="text-[#00AEEF]">Got Answers</span>
           </h2>

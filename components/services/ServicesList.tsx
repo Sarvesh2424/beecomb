@@ -56,10 +56,10 @@ export default function ServicesList() {
     >
       {/* Header section  */}
       <div className="mb-16">
-        <h2 className={`text-5xl font-bold mb-4 ${mont.className}`}>
+        <h2 className={`md:text-5xl text-3xl font-bold mb-4 ${mont.className}`}>
           What <span className="text-[#0099FF]">we do</span>
         </h2>
-        <p className="text-[#99A1AF ] max-w-lg     text-xl leading-relaxed">
+        <p className="md:text-[#99A1AF] text-[#99A1AF] max-w-lg     text-xl leading-relaxed">
           Make your vision a reality, right now. We help founders turn early
           ideas into products people remember by removing the fluff and
           distilling the good stuff.

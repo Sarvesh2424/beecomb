@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat_Alternates } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +11,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const clashDisplay = localFont({
+  src: "../public/fonts/ClashDisplay-Variable.woff2",
+  weight: "200 800", 
+  style: "normal",
+  variable: "--font-clash",
 });
 
 
@@ -26,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${clashDisplay.variable} overflow-x-hidden h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

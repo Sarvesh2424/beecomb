@@ -62,7 +62,7 @@ function Hero() {
           </a>
         </div>
 
-        <button className="bg-[#0D70DA] text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-all">
+        <button className="bg-[#0D70DA] text-white px-7 py-3 hidden rounded-full font-semibold md:flex items-center gap-2 hover:bg-blue-700 transition-all">
           Get a Proposal <ArrowRight size={18} />
         </button>
         {open ? (
@@ -83,12 +83,15 @@ function Hero() {
               setIsOpen((p) => !p);
             }}
           >
-            <Menu />
+             <Image src="/Menu.svg" alt="menu" className="w-auto h-auto" height={10} width={10}/>
           </button>
         )}
         {open && (
-          <div className="md:hidden absolute right-5 bg-[#0D70DA]/70 rounded-xl text-white top-2/3 px-2 flex flex-col items-center gap-10">
-            <Link href="/work" className="hover:text-blue-600 transition-colors">
+          <div className="md:hidden absolute right-5 bg-white py-2 z-20 rounded-xl text-black top-2/3 px-2 flex flex-col items-center gap-10">
+            <Link
+              href="/work"
+              className="hover:text-blue-600 transition-colors"
+            >
               Work
             </Link>
             <Link
@@ -97,36 +100,41 @@ function Hero() {
             >
               Services <ChevronDown size={16} className="mt-0.5" />
             </Link>
-            <a
-              href="#"
-              className="hover:text-blue-600  transition-colors"
-            >
+            <a href="#" className="hover:text-blue-600  transition-colors">
               Contact
             </a>
+            <button className="bg-[#0D70DA] text-white px-7 py-3  rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-all">
+              Get a Proposal <ArrowRight size={18} />
+            </button>
           </div>
         )}
       </nav>
       <h1
-        className={`md:w-1/3 flex relative items-center h-full ml-16 mt-24 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}
+        className={`md:w-1/3 hidden md:flex relative items-center h-full ml-16 mt-24 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}
       >
         Services Built for
       </h1>
       <h1
-        className={`md:w-1/3 relative flex items-center h-full ml-16 mt-4 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}
+        className={`md:w-1/3 relative hidden md:flex items-center h-full ml-16 mt-4 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}
       >
         {" "}
         Performance,
       </h1>
       <h1
-        className={`md:w-1/3 relative flex items-center h-full ml-16 mt-4 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}
+        className={`md:w-1/3 relative hidden md:flex items-center h-full ml-16 mt-4 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}
       >
         {" "}
         Scale, and{" "}
       </h1>
       <h1
-        className={`md:w-1/3 relative flex items-center h-full ml-16 mt-4 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}
+        className={`md:w-1/3 relative hidden md:flex items-center h-full ml-16 mt-4 text-3xl md:text-6xl text-[#0E1435] ${mont.className}`}
       >
         Impact
+      </h1>
+      <h1
+        className={`md:w-1/3 relative md:hidden flex items-center justify-center leading-snug text-center mt-20 h-full text-4xl md:text-6xl text-[#0E1435] ${mont.className}`}
+      >
+        Services Built for Performance, Scale, and Impact
       </h1>
     </div>
   );

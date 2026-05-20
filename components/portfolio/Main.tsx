@@ -55,80 +55,83 @@ export default function PortfolioSection({
     >
       <div className="max-w-7xl mx-auto">
         <nav className="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-          <div className="flex items-center gap-2">
-            <Link href={"/"}>
-              {" "}
-              <Image
-                src="/Logo.svg"
-                width={52}
-                height={44}
-                className="w-auto h-auto"
-                alt="logo"
-              />
-            </Link>
-          </div>
-          <div className="hidden md:flex items-center gap-10 text-[#0E1435]">
-            <Link
-              href="/work"
-              className="hover:text-blue-600 transition-colors"
-            >
+        <div className="flex items-center gap-2">
+          <Link href={"/"}>
+            {" "}
+            <Image
+              src="/Logo.svg"
+              width={52}
+              height={44}
+              className="w-auto h-auto"
+              alt="logo"
+            />
+          </Link>
+        </div>
+        <div className="hidden md:flex items-center gap-10 text-[#0E1435]">
+          <Link href="/work" className="hover:text-blue-600 transition-colors">
+            Work
+          </Link>
+          <Link
+            href="/services"
+            className="hover:text-blue-600 transition-colors text-[#0E1435] flex items-center gap-1"
+          >
+            Services <ChevronDown size={16} className="mt-0.5" />
+          </Link>
+          <a
+            href="#"
+            className="hover:text-blue-600 text-[#0E1435] transition-colors"
+          >
+            Contact
+          </a>
+        </div>
+
+        <button className="bg-[#0D70DA] text-white px-7 py-3 hidden rounded-full font-semibold md:flex items-center gap-2 hover:bg-blue-700 transition-all">
+          Get a Proposal <ArrowRight size={18} />
+        </button>
+        {open ? (
+          <button
+            className="md:hidden text-black"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen((p) => !p);
+            }}
+          >
+            <X />
+          </button>
+        ) : (
+          <button
+            className="md:hidden text-black"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen((p) => !p);
+            }}
+          >
+            <Image src="/Menu.svg" alt="menu" className="w-auto h-auto" height={10} width={10}/>
+          </button>
+        )}
+        {open && (
+          <div className="md:hidden absolute right-5 bg-white py-2 z-20 rounded-xl text-black top-2/3 px-2 flex flex-col items-center gap-10">
+            <Link href="/work" className="hover:text-blue-600 transition-colors">
               Work
             </Link>
             <Link
               href="/services"
-              className="hover:text-blue-600 transition-colors text-[#0E1435] flex items-center gap-1"
+              className="hover:text-blue-600 transition-colors  flex items-center gap-1"
             >
               Services <ChevronDown size={16} className="mt-0.5" />
             </Link>
             <a
               href="#"
-              className="hover:text-blue-600 text-[#0E1435] transition-colors"
+              className="hover:text-blue-600  transition-colors"
             >
               Contact
             </a>
+             <button className="bg-[#0D70DA] text-white px-7 py-3  rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-all">
+          Get a Proposal <ArrowRight size={18} />
+        </button>
           </div>
-
-          <button className="bg-[#0D70DA] text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-700 transition-all">
-            Get a Proposal <ArrowRight size={18} />
-          </button>
-          {open ? (
-            <button
-              className="md:hidden text-black"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsOpen((p) => !p);
-              }}
-            >
-              <X />
-            </button>
-          ) : (
-            <button
-              className="md:hidden text-black"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsOpen((p) => !p);
-              }}
-            >
-              <Menu />
-            </button>
-          )}
-          {open && (
-            <div className="md:hidden absolute right-5 bg-[#0D70DA]/70 rounded-xl text-white top-2/3 px-2 flex flex-col items-center gap-10">
-              <Link href="/work" className="hover:text-blue-600 transition-colors">
-                Work
-              </Link>
-              <Link
-                href="/services"
-                className="hover:text-blue-600 transition-colors  flex items-center gap-1"
-              >
-                Services <ChevronDown size={16} className="mt-0.5" />
-              </Link>
-              <a href="#" className="hover:text-blue-600  transition-colors">
-                Contact
-              </a>
-            </div>
-          )}
-        </nav>
+        )}
+      </nav>
 
         <div className="flex flex-col mt-12 items-center gap-6 mb-16">
           <div className="relative w-full max-w-2xl flex items-center gap-3">
@@ -139,10 +142,10 @@ export default function PortfolioSection({
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder='Search "Latest Projects"'
-                className="w-full pl-12  pr-4 py-4 bg-white rounded-full border border-[#D9D9D9] placeholder:text-[#757575] focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-[#757575]"
+                className="w-full pl-12 py-1  pr-4 md:py-4 bg-white rounded-full border border-[#D9D9D9] placeholder:text-[#757575] focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-[#757575]"
               />
             </div>
-            <button className="flex items-center gap-2 px-6 py-4 rounded-full bg-white border border-[#0D70DA]">
+            <button className="flex items-center gap-2 px-3 md:px-6 py-1 md:py-4 rounded-full bg-white border border-[#0D70DA]">
               <ListFilter className="w-4 h-4 text-[#0099FF]" />
               <span className=" font-medium text-[#0099FF]">Filters</span>
             </button>

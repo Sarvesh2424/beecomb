@@ -41,18 +41,18 @@ const FeaturesApart = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <h2
-            className={`${mont.className} text-5xl font-semibold md:text-5xl  tracking-tight`}
+            className={`${mont.className} text-3xl font-semibold md:text-5xl  tracking-tight`}
           >
             What Sets <span className="text-[#0099FF]">Us Apart</span>
           </h2>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-40 gap-4 lg:grid-cols-4 ">
+        <div className="grid grid-cols-2 md:grid-cols-2 mt-40 gap-8 md:gap-4 lg:grid-cols-4 ">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`relative p-10 flex flex-col  justify-start  transition-all duration-300 ${"hover:bg-[#1a1a1a]  hover:border-[#0099FF] bg-transparent  hover:scale-110 hover:border-t-6 border-transparent"}`}
+              className={`relative md:p-10 flex flex-col  justify-start  transition-all duration-300 ${"hover:bg-[#1a1a1a]  hover:border-[#0099FF] bg-transparent  hover:scale-110 hover:border-t-6 border-transparent"}`}
             >
               {/* Icon Container */}
               <div className="mb-12">

@@ -6,7 +6,7 @@ import SwipeList from "./subcomponents/HoverReveal";
 
 const monts = Montserrat({});
 const inter = Inter({});
-
+const geologica = Geologica({});
 
 const Process = () => {
   const steps = [
@@ -49,7 +49,7 @@ const Process = () => {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-20">
         <h2
-          className={`text-4xl  md:text-5xl font-semibold mb-6 ${monts.className}`}
+          className={`text-3xl  md:text-5xl font-semibold mb-6 ${monts.className}`}
         >
           From <span className="text-[#00B1FF]">Idea</span> To{" "}
           <span className="text-[#00B1FF]">Execution</span>
@@ -61,8 +61,104 @@ const Process = () => {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2items-start">
+      <div className="max-w-7xl hidden mx-auto md:grid grid-cols-1 lg:grid-cols-2items-start">
         <TimelineDemo />
+      </div>
+      <div className="md:hidden mt-12">
+        <Image
+          src={"/P1.svg"}
+          alt="img"
+          height={100}
+          width={100}
+          className="w-auto h-auto"
+        />
+        <h3
+          className={`${geologica.className}mb-4 mt-4 text-xl md:text-2xl font-semibold text-[#8F8F8F] group-hover:text-white transition-colors duration-500`}
+        >
+          Discovery
+        </h3>
+        <p className="mb-4  text-[#8F8F8F] text-xl">Project Fit Assessment</p>
+        <p className="text-lg md:max-w-1/3 font-normal text-[#8F8F8F] md:text-sm  leading-relaxed">
+          We start with a consultation to understand your idea, goals, and
+          market. This helps us tailor our services to meet your specific needs
+          and ensure a perfect project fit.
+        </p>
+      </div>
+      <div className="md:hidden mt-12">
+        <Image
+          src={"/P2.svg"}
+          alt="img"
+          height={100}
+          width={100}
+          className="w-auto h-auto"
+        />
+        <h3
+          className={`${geologica.className}mb-4 mt-4 text-xl md:text-2xl font-semibold text-[#8F8F8F] group-hover:text-white transition-colors duration-500`}
+        >
+          Strategic Roadmap
+        </h3>
+        <p className="mb-4  text-[#8F8F8F] text-xl">Project Fit Assessment</p>
+        <p className="text-lg md:max-w-1/3 font-normal text-[#8F8F8F] md:text-sm  leading-relaxed">
+          Together, we create a customized roadmap outlining each milestone in
+          your MVP development journey.
+        </p>
+      </div>
+      <div className="md:hidden mt-12">
+        <Image
+          src={"/P3.svg"}
+          alt="img"
+          height={100}
+          width={100}
+          className="w-auto h-auto"
+        />
+        <h3
+          className={`${geologica.className}mb-4 mt-4 text-xl md:text-2xl font-semibold text-[#8F8F8F] group-hover:text-white transition-colors duration-500`}
+        >
+          Design
+        </h3>
+        <p className="mb-4  text-[#8F8F8F] text-xl">User-Centered Approach</p>
+        <p className="text-lg md:max-w-1/3 font-normal text-[#8F8F8F] md:text-sm  leading-relaxed">
+          We begin with in-depth research to understand your users, business
+          goals, and industry trends. This allows us to create designs that are
+          not only visually appealing but also highly functional and intuitive.
+        </p>
+      </div>
+      <div className="md:hidden mt-12">
+        <Image
+          src={"/P4.svg"}
+          alt="img"
+          height={100}
+          width={100}
+          className="w-auto h-auto"
+        />
+        <h3
+          className={`${geologica.className}mb-4 mt-4 text-xl md:text-2xl font-semibold text-[#8F8F8F] group-hover:text-white transition-colors duration-500`}
+        >
+          Build & Iterate
+        </h3>
+        <p className="mb-4  text-[#8F8F8F] text-xl">Project Fit Assessment</p>
+        <p className="text-lg md:max-w-1/3 font-normal text-[#8F8F8F] md:text-sm  leading-relaxed">
+          We start with a consultation to understand your idea, goals, and
+          market. This helps us tailor our services to meet your needs.
+        </p>
+      </div>
+      <div className="md:hidden mt-12">
+        <Image
+          src={"/P5.svg"}
+          alt="img"
+          height={100}
+          width={100}
+          className="w-auto h-auto"
+        />
+        <h3
+          className={`${geologica.className}mb-4 mt-4 text-xl md:text-2xl font-semibold text-[#8F8F8F] group-hover:text-white transition-colors duration-500`}
+        >
+          Launch & Support
+        </h3>
+        <p className="mb-4  text-[#8F8F8F] text-xl">Project Fit Assessment</p>
+        <p className="text-lg md:max-w-1/3 font-normal text-[#8F8F8F] md:text-sm  leading-relaxed">
+          We start with a consultation to understand your idea, goals, and market. This helps us tailor our services to meet your needs.
+        </p>
       </div>
     </section>
   );
