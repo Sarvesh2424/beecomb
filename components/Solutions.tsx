@@ -8,7 +8,7 @@ import { useRef, useState } from "react";
 const mont = Montserrat({});
 
 const Solutions = () => {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const cards = [
     {
