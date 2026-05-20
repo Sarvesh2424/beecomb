@@ -50,23 +50,23 @@ const GlobalPartner = () => {
       <div className="md:hidden grid grid-cols-2 gap-2">
         <div className="bg-[#C2E7FF33] p-3 rounded-4xl">
           <p className="text-[#1E2A2EE5] font-['Arial']">Tech Hub</p>
-          <h1 className="font-clash text-[#1E2A2E] font-bold text-lg">Bangalore, India</h1>
-          <p className="text-[#1E2A2EBF] font-['Arial'] text-sm">Development Powerhouse</p>
+          <h1 className="font-clash text-[#1E2A2E] font-bold ">Bangalore, India</h1>
+          <p className="text-[#1E2A2EBF] font-['Arial'] text-xs">Development Powerhouse</p>
         </div>
         <div className="bg-[#C2E7FF33] p-3 rounded-4xl">
           <p className="text-[#1E2A2EE5] font-['Arial']">Headquaters</p>
-          <h1 className="font-clash text-[#1E2A2E] font-bold text-lg"> Luton, UK</h1>
-          <p className="text-[#1E2A2EBF] font-['Arial'] text-sm">Strategic innovation center</p>
+          <h1 className="font-clash text-[#1E2A2E] font-bold "> Luton, UK</h1>
+          <p className="text-[#1E2A2EBF] font-['Arial'] text-xs">Strategic innovation center</p>
         </div>
         <div className="bg-[#C2E7FF33] p-3 rounded-4xl">
           <p className="text-[#1E2A2EE5] font-['Arial']">Regional Office</p>
-          <h1 className="font-clash text-[#1E2A2E] font-bold text-lg">Sharjah, UAE</h1>
-          <p className="text-[#1E2A2EBF] font-['Arial'] text-sm">Middle East Operations</p>
+          <h1 className="font-clash text-[#1E2A2E] font-bold ">Sharjah, UAE</h1>
+          <p className="text-[#1E2A2EBF] font-['Arial'] text-xs">Middle East Operations</p>
         </div>
         <div className="bg-[#C2E7FF33] p-3 rounded-4xl">
           <p className="text-[#1E2A2EE5] font-['Arial']">Regional Office</p>
-          <h1 className="font-clash text-[#1E2A2E] font-bold text-lg">New Brunswick, Canada</h1>
-          <p className="text-[#1E2A2EBF] font-['Arial'] text-sm">Western Operations</p>
+          <h1 className="font-clash text-[#1E2A2E] font-bold leading-tight">New Brunswick, Canada</h1>
+          <p className="text-[#1E2A2EBF] font-['Arial'] text-xs">Western Operations</p>
         </div>
       </div>
 
