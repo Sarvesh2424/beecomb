@@ -199,8 +199,8 @@ export default function PortfolioSection({
                       {project.title}
                     </h3>
                   </div>
-                  <div className="p-3 rounded-full border border-black flex items-center justify-center">
-                    <ArrowRight className="w-10 h-10" />
+                  <div className="md:p-3 p-1  rounded-full border border-black flex items-center justify-center">
+                    <ArrowRight className="md:w-10 w-5 h-5 md:h-10" />
                   </div>
                 </div>
 

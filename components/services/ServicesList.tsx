@@ -73,7 +73,7 @@ export default function ServicesList() {
             key={index}
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(null)}
-            className="group relative flex items-center justify-center py-8 cursor-pointer overflow-visible"
+            className="group relative flex items-center mb-6 md:mb-0 justify-center py-8 cursor-pointer overflow-visible"
           >
             <div className="w-1/3">
               <AnimatePresence>
@@ -85,7 +85,7 @@ export default function ServicesList() {
                     transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                     className="absolute bottom-0 md:left-0 top-1/2 -translate-y-1/2 pointer-events-none z-20  lg:block"
                   >
-                    <div className="relative  h-auto overflow-hidden rounded-2xl shadow-2xl">
+                    <div className="relative mt-12 md:mt-0 h-auto overflow-hidden rounded-2xl shadow-2xl">
                       <Image
                         src={service.image}
                         alt={service.title}

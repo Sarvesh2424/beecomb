@@ -2,6 +2,7 @@
 
 import { Inter, Montserrat } from "next/font/google";
 import { ParallaxScrollDemo } from "./subcomponents/ParallaxScroll";
+import Image from "next/image";
 
 const monts = Montserrat({});
 const inter = Inter({});
@@ -79,8 +80,8 @@ const TechnologySection = () => {
             <div
               key={idx}
               className={`
-                flex flex-col items-center justify-center gap-2
-                w-30 h-30 md:w-36 md:h-36 
+                flex flex-col p-2 items-center justify-center gap-2
+                w-auto h-auto md:w-36 md:h-36 py-3
                 bg-white rounded-2xl shadow-[0_7px_4px_0px_#0000001F]
                 border border-[#D4D4D4]
                 transition-all duration-500  
@@ -91,13 +92,15 @@ const TechnologySection = () => {
               <div
                 className={`relative w-12 h-12 md:w-14 md:h-14 mb-3 transition-transform duration-500 `}
               >
-                <img
+                <Image
                   src={tech.icon}
                   alt={tech.name}
+                  width={10}
+                  height={10}
                   className="w-full h-full object-contain "
                 />
               </div>
-              <span className="font-medium text-black ">{tech.name}</span>
+              <span className="font-medium w-full text-sm text-center text-black ">{tech.name}</span>
             </div>
           ))}
       </div>

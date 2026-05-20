@@ -101,7 +101,7 @@ const Hero = () => {
       </nav>
 
       <section className="relative  pt-20 pb-16 px-4 text-center max-w-7xl mx-auto">
-        <span className="text-[#0D70DA] font-medium text-lg md:text-xl mb-12 block">
+        <span className="text-[#0D70DA] font-medium text-sm md:text-xl mb-12 block">
           Conversion-Focused Web Design, SEO & AI Search Optimization
         </span>
 

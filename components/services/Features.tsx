@@ -52,7 +52,7 @@ const FeaturesApart = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`relative md:p-10 flex flex-col  justify-start  transition-all duration-300 ${"hover:bg-[#1a1a1a]  hover:border-[#0099FF] bg-transparent  hover:scale-110 hover:border-t-6 border-transparent"}`}
+              className={`relative md:p-10 p-2 flex flex-col  justify-start  transition-all duration-300 ${"md:hover:bg-[#1a1a1a] active:bg-[#1a1a1a] active:border-[#0099FF] md:hover:border-[#0099FF] border-t-6 bg-transparent active:scale-110 focus:scale-110  md:hover:scale-110 md:hover:border-t-6 border-transparent"}`}
             >
               {/* Icon Container */}
               <div className="mb-12">
